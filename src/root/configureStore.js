@@ -12,7 +12,7 @@ export default () => {
 
   const enhancer = compose(
     applyMiddleware(sagaMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    // window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 
   const store = createStore(rootReducer, enhancer)

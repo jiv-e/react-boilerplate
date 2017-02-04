@@ -1,22 +1,19 @@
 // @flow
 
 import React from 'react'
+import {AppContainer} from 'react-hot-loader'
 import {Provider} from 'react-redux'
-import {Router} from 'react-router'
-import routes from './routes'
 
 export type RootProps = {
-  history: any,
-  store: any,
+  store: mixed,
+  children?: mixed
 }
 
-const Root = ({history, store}: RootProps) =>
-  <Provider store={store}>
-    <Router
-      history={history}
-      routes={routes}
-      key={Math.random()}
-    />
-  </Provider>
+const Root = ({store, children}: RootProps) =>
+  <AppContainer key={Math.random()}>
+    <Provider store={store}>
+      {children}
+    </Provider>
+  </AppContainer>
 
 export default Root

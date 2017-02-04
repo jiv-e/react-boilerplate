@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {sayHello} from './actions'
 import {getMessage} from './selectors'
-import css from './Hello.css'
+import css from './hello.css'
 
 type HelloProps = {
   message: string,
@@ -19,16 +19,17 @@ class Hello extends Component {
     message: 'Hello from React.',
   }
 
-  componentWillMount() {
-    this.props.sayHello()
-  }
+  static fetchData = ({dispatch}) => new Promise((resolve) => {
+    dispatch(sayHello())
+    resolve()
+  })
 
   render() {
     const {message} = this.props
 
     return (
       <div className={css.component}>
-        <h1>{message} asd</h1>
+        <h1>{message} bar</h1>
       </div>
     )
   }
