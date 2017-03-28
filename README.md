@@ -34,6 +34,15 @@ You can find our documentation [here](./docs/README.md).
 
 ## Usage
 
+### Install Node.js
+You can use any method to get the right version of Node.js on your system but NVM is preferred. Find NVM install instructions [here](https://github.com/creationix/nvm#installation). Recommended Node.js version is written in [.nvmrc](.nvmrc).
+
+Run the following command to use the right version of Node.js with NVM.
+
+```bash
+nvm use
+```
+
 ### Create project
 
 Install [create-project](https://www.npmjs.com/package/create-project) and create your project.
